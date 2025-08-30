@@ -1,0 +1,1243 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>CHAPTER-03-METHODOLOGY</title>
+  <style>
+    html {
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 12px;
+      }
+      h1 {
+        font-size: 1.8em;
+      }
+    }
+    @media print {
+      html {
+        background-color: white;
+      }
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    svg {
+      height: auto;
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, Consolas, 'Lucida Console', monospace;
+      font-size: 85%;
+      margin: 0;
+      hyphens: manual;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      border: none;
+      border-top: 1px solid #1a1a1a;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC ul {
+      padding-left: 1.3em;
+    }
+    #TOC > ul {
+      padding-left: 0;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+    /* CSS for syntax highlighting */
+    html { -webkit-text-size-adjust: 100%; }
+    pre > code.sourceCode { white-space: pre; position: relative; }
+    pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+    pre > code.sourceCode > span:empty { height: 1.2em; }
+    .sourceCode { overflow: visible; }
+    code.sourceCode > span { color: inherit; text-decoration: inherit; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
+    }
+    @media print {
+    pre > code.sourceCode { white-space: pre-wrap; }
+    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+    }
+    pre.numberSource code
+      { counter-reset: source-line 0; }
+    pre.numberSource code > span
+      { position: relative; left: -4em; counter-increment: source-line; }
+    pre.numberSource code > span > a:first-child::before
+      { content: counter(source-line);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+        color: #aaaaaa;
+      }
+    pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+    div.sourceCode
+      {   }
+    @media screen {
+    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+    }
+    code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+    code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+    code span.at { color: #7d9029; } /* Attribute */
+    code span.bn { color: #40a070; } /* BaseN */
+    code span.bu { color: #008000; } /* BuiltIn */
+    code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+    code span.ch { color: #4070a0; } /* Char */
+    code span.cn { color: #880000; } /* Constant */
+    code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+    code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+    code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+    code span.dt { color: #902000; } /* DataType */
+    code span.dv { color: #40a070; } /* DecVal */
+    code span.er { color: #ff0000; font-weight: bold; } /* Error */
+    code span.ex { } /* Extension */
+    code span.fl { color: #40a070; } /* Float */
+    code span.fu { color: #06287e; } /* Function */
+    code span.im { color: #008000; font-weight: bold; } /* Import */
+    code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+    code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+    code span.op { color: #666666; } /* Operator */
+    code span.ot { color: #007020; } /* Other */
+    code span.pp { color: #bc7a00; } /* Preprocessor */
+    code span.sc { color: #4070a0; } /* SpecialChar */
+    code span.ss { color: #bb6688; } /* SpecialString */
+    code span.st { color: #4070a0; } /* String */
+    code span.va { color: #19177c; } /* Variable */
+    code span.vs { color: #4070a0; } /* VerbatimString */
+    code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+  </style>
+</head>
+<body>
+<nav id="TOC" role="doc-toc">
+<ul>
+<li><a href="#chapter-03-methodology"
+id="toc-chapter-03-methodology">CHAPTER 03: METHODOLOGY</a>
+<ul>
+<li><a href="#table-of-contents" id="toc-table-of-contents">Table of
+Contents</a></li>
+<li><a href="#chapter-overview" id="toc-chapter-overview">3.1 Chapter
+Overview</a></li>
+<li><a href="#research-methodology" id="toc-research-methodology">3.2
+Research Methodology</a>
+<ul>
+<li><a href="#research-paradigm" id="toc-research-paradigm">Research
+Paradigm</a></li>
+<li><a href="#research-framework" id="toc-research-framework">Research
+Framework</a></li>
+<li><a href="#research-questions" id="toc-research-questions">Research
+Questions</a></li>
+<li><a href="#data-collection-strategy"
+id="toc-data-collection-strategy">Data Collection Strategy</a></li>
+</ul></li>
+<li><a href="#development-methodology"
+id="toc-development-methodology">3.3 Development Methodology</a>
+<ul>
+<li><a href="#requirement-elicitation-methodology"
+id="toc-requirement-elicitation-methodology">3.3.1 Requirement
+Elicitation Methodology</a></li>
+<li><a href="#design-methodology" id="toc-design-methodology">3.3.2
+Design Methodology</a></li>
+<li><a href="#programming-paradigm" id="toc-programming-paradigm">3.3.3
+Programming Paradigm</a></li>
+<li><a href="#evaluation-methodology"
+id="toc-evaluation-methodology">3.3.4 Evaluation Methodology</a></li>
+<li><a href="#solution-methodology" id="toc-solution-methodology">3.3.5
+Solution Methodology</a></li>
+</ul></li>
+<li><a href="#project-management-methodology"
+id="toc-project-management-methodology">3.4 Project Management
+Methodology</a>
+<ul>
+<li><a href="#project-management-framework"
+id="toc-project-management-framework">Project Management
+Framework</a></li>
+<li><a href="#project-scope" id="toc-project-scope">3.4.1 Project
+Scope</a></li>
+<li><a href="#schedule" id="toc-schedule">3.4.2 Schedule</a></li>
+<li><a href="#resource-requirements"
+id="toc-resource-requirements">3.4.3 Resource Requirements</a></li>
+<li><a href="#risks-and-mitigation" id="toc-risks-and-mitigation">3.4.4
+Risks and Mitigation</a></li>
+</ul></li>
+<li><a href="#chapter-summary" id="toc-chapter-summary">3.5 Chapter
+Summary</a>
+<ul>
+<li><a href="#key-methodological-contributions"
+id="toc-key-methodological-contributions">Key Methodological
+Contributions</a></li>
+<li><a href="#methodology-alignment-with-project-goals"
+id="toc-methodology-alignment-with-project-goals">Methodology Alignment
+with Project Goals</a></li>
+<li><a href="#expected-outcomes" id="toc-expected-outcomes">Expected
+Outcomes</a></li>
+<li><a href="#methodological-innovation"
+id="toc-methodological-innovation">Methodological Innovation</a></li>
+</ul></li>
+</ul></li>
+</ul>
+</nav>
+<h1 id="chapter-03-methodology">CHAPTER 03: METHODOLOGY</h1>
+<h2 id="table-of-contents">Table of Contents</h2>
+<ul>
+<li><a href="#31-chapter-overview">3.1 Chapter Overview</a></li>
+<li><a href="#32-research-methodology">3.2 Research Methodology</a></li>
+<li><a href="#33-development-methodology">3.3 Development
+Methodology</a>
+<ul>
+<li><a href="#331-requirement-elicitation-methodology">3.3.1 Requirement
+Elicitation Methodology</a></li>
+<li><a href="#332-design-methodology">3.3.2 Design Methodology</a></li>
+<li><a href="#333-programming-paradigm">3.3.3 Programming
+Paradigm</a></li>
+<li><a href="#334-evaluation-methodology">3.3.4 Evaluation
+Methodology</a></li>
+<li><a href="#335-solution-methodology">3.3.5 Solution
+Methodology</a></li>
+</ul></li>
+<li><a href="#34-project-management-methodology">3.4 Project Management
+Methodology</a>
+<ul>
+<li><a href="#341-project-scope">3.4.1 Project Scope</a></li>
+<li><a href="#342-schedule">3.4.2 Schedule</a></li>
+<li><a href="#343-resource-requirements">3.4.3 Resource
+Requirements</a></li>
+<li><a href="#344-risks-and-mitigation">3.4.4 Risks and
+Mitigation</a></li>
+</ul></li>
+<li><a href="#35-chapter-summary">3.5 Chapter Summary</a></li>
+</ul>
+<hr />
+<h2 id="chapter-overview">3.1 Chapter Overview</h2>
+<p>This chapter presents a comprehensive methodology framework for the
+“Sinhalese Inscriptions: Novel Reconstruction and Classification”
+project. The methodology encompasses multiple dimensions including
+research approach, development practices, and project management
+strategies specifically tailored for archaeological text processing and
+machine learning applications.</p>
+<p>The chapter is structured to provide a systematic approach to: -
+<strong>Research Methodology</strong>: Establishing the theoretical
+foundation and investigative approach - <strong>Development
+Methodology</strong>: Defining the technical implementation strategies -
+<strong>Project Management</strong>: Ensuring effective resource
+utilization and risk management</p>
+<p>The methodology framework is designed to address the unique
+challenges of working with ancient Sinhalese inscriptions, including
+data scarcity, text degradation, and the need for novel computational
+approaches to reconstruction and classification tasks.</p>
+<p><strong>Key Objectives of This Methodology:</strong> 1. Establish a
+robust research foundation for inscription analysis 2. Define systematic
+development approaches for AI-driven reconstruction 3. Ensure scalable
+and maintainable software architecture 4. Implement effective project
+management practices 5. Mitigate risks associated with historical data
+processing</p>
+<hr />
+<h2 id="research-methodology">3.2 Research Methodology</h2>
+<p>The research methodology for this project adopts a
+<strong>mixed-methods approach</strong> combining quantitative
+computational analysis with qualitative archaeological insights. This
+hybrid methodology is essential for addressing the complex nature of
+ancient Sinhalese inscriptions.</p>
+<h3 id="research-paradigm">Research Paradigm</h3>
+<p>The project follows a <strong>pragmatic research paradigm</strong>
+that emphasizes: - <strong>Problem-solving orientation</strong>: Focus
+on practical solutions for inscription reconstruction -
+<strong>Methodological pluralism</strong>: Integration of computer
+science and archaeological methods - <strong>Evidence-based
+approach</strong>: Data-driven decision making supported by domain
+expertise</p>
+<h3 id="research-framework">Research Framework</h3>
+<table>
+<colgroup>
+<col style="width: 38%" />
+<col style="width: 26%" />
+<col style="width: 36%" />
+</colgroup>
+<thead>
+<tr>
+<th>Research Component</th>
+<th>Methodology</th>
+<th>Tools/Techniques</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Data Collection</strong></td>
+<td>Systematic sampling of inscriptions from archaeological
+databases</td>
+<td>Digital imaging, OCR preprocessing</td>
+</tr>
+<tr>
+<td><strong>Literature Review</strong></td>
+<td>Comprehensive analysis of existing work in epigraphy and
+computational linguistics</td>
+<td>Systematic review protocols</td>
+</tr>
+<tr>
+<td><strong>Experimental Design</strong></td>
+<td>Controlled experiments with baseline comparisons</td>
+<td>A/B testing, cross-validation</td>
+</tr>
+<tr>
+<td><strong>Validation</strong></td>
+<td>Expert review combined with automated metrics</td>
+<td>Domain expert evaluation, BLEU scores</td>
+</tr>
+</tbody>
+</table>
+<h3 id="research-questions">Research Questions</h3>
+<p>The methodology is designed to address the following primary research
+questions:</p>
+<ol type="1">
+<li><strong>RQ1</strong>: How can machine learning techniques be
+effectively applied to reconstruct damaged Sinhalese inscriptions?</li>
+<li><strong>RQ2</strong>: What classification algorithms best categorize
+inscriptions by historical period and linguistic features?</li>
+<li><strong>RQ3</strong>: How can the accuracy of reconstruction be
+validated against archaeological standards?</li>
+<li><strong>RQ4</strong>: What are the limitations and biases in current
+computational approaches to ancient text processing?</li>
+</ol>
+<h3 id="data-collection-strategy">Data Collection Strategy</h3>
+<p>The research methodology employs a <strong>stratified sampling
+approach</strong>:</p>
+<pre><code>Ancient Sinhalese Inscriptions Corpus
+├── Temporal Stratification
+│   ├── Early Period (3rd century BCE - 1st century CE)
+│   ├── Classical Period (1st - 10th century CE)
+│   └── Medieval Period (10th - 15th century CE)
+├── Geographic Stratification
+│   ├── North Central Province
+│   ├── Western Province
+│   └── Southern Province
+└── Preservation Quality
+    ├── Well-preserved (&gt;90% text visible)
+    ├── Moderately damaged (50-90% text visible)
+    └── Severely damaged (&lt;50% text visible)</code></pre>
+<hr />
+<h2 id="development-methodology">3.3 Development Methodology</h2>
+<p>The development methodology integrates modern software engineering
+practices with specialized requirements for archaeological and
+linguistic data processing. The approach emphasizes iterative
+development, continuous validation, and maintainable code
+architecture.</p>
+<h3 id="requirement-elicitation-methodology">3.3.1 Requirement
+Elicitation Methodology</h3>
+<p>The requirement elicitation process follows a
+<strong>stakeholder-centric approach</strong> involving multiple domain
+experts and end-users.</p>
+<h4 id="stakeholder-analysis">Stakeholder Analysis</h4>
+<table>
+<colgroup>
+<col style="width: 29%" />
+<col style="width: 26%" />
+<col style="width: 44%" />
+</colgroup>
+<thead>
+<tr>
+<th>Stakeholder Group</th>
+<th>Role in Project</th>
+<th>Requirements Contribution</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Archaeologists</strong></td>
+<td>Domain experts</td>
+<td>Functional requirements for inscription analysis</td>
+</tr>
+<tr>
+<td><strong>Linguists</strong></td>
+<td>Language specialists</td>
+<td>Linguistic accuracy requirements</td>
+</tr>
+<tr>
+<td><strong>Computer Scientists</strong></td>
+<td>Technical implementers</td>
+<td>System architecture and performance requirements</td>
+</tr>
+<tr>
+<td><strong>End Users</strong></td>
+<td>System operators</td>
+<td>Usability and interface requirements</td>
+</tr>
+</tbody>
+</table>
+<h4 id="requirements-gathering-techniques">Requirements Gathering
+Techniques</h4>
+<ol type="1">
+<li><strong>Expert Interviews</strong>: Semi-structured interviews with
+archaeology and linguistics professionals</li>
+<li><strong>Focus Groups</strong>: Collaborative sessions with
+multi-disciplinary teams</li>
+<li><strong>Use Case Analysis</strong>: Systematic identification of
+system interactions</li>
+<li><strong>Prototype Feedback</strong>: Iterative refinement based on
+working demonstrations</li>
+</ol>
+<h4 id="requirements-categorization">Requirements Categorization</h4>
+<pre class="mermaid"><code>graph TD
+    A[Requirements] --&gt; B[Functional Requirements]
+    A --&gt; C[Non-Functional Requirements]
+    
+    B --&gt; D[Text Reconstruction]
+    B --&gt; E[Classification System]
+    B --&gt; F[User Interface]
+    
+    C --&gt; G[Performance]
+    C --&gt; H[Scalability]
+    C --&gt; I[Accuracy]
+    C --&gt; J[Maintainability]</code></pre>
+<h3 id="design-methodology">3.3.2 Design Methodology</h3>
+<p>The design methodology follows <strong>Domain-Driven Design
+(DDD)</strong> principles adapted for archaeological data processing,
+emphasizing clear separation of concerns and domain-specific
+modeling.</p>
+<h4 id="architectural-design-principles">Architectural Design
+Principles</h4>
+<ol type="1">
+<li><strong>Modular Architecture</strong>: Clear separation between OCR,
+reconstruction, and classification modules</li>
+<li><strong>Data Pipeline Design</strong>: Systematic flow from raw
+images to processed results</li>
+<li><strong>API-First Approach</strong>: RESTful interfaces for system
+integration</li>
+<li><strong>Microservices Pattern</strong>: Independent deployment of
+core functionalities</li>
+</ol>
+<h4 id="design-process-framework">Design Process Framework</h4>
+<table style="width:100%;">
+<colgroup>
+<col style="width: 35%" />
+<col style="width: 30%" />
+<col style="width: 35%" />
+</colgroup>
+<thead>
+<tr>
+<th>Design Phase</th>
+<th>Activities</th>
+<th>Deliverables</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Conceptual Design</strong></td>
+<td>Domain modeling, high-level architecture</td>
+<td>System architecture diagram</td>
+</tr>
+<tr>
+<td><strong>Logical Design</strong></td>
+<td>Module specifications, data flow design</td>
+<td>Component diagrams, API specifications</td>
+</tr>
+<tr>
+<td><strong>Physical Design</strong></td>
+<td>Database schema, deployment architecture</td>
+<td>Database ERD, deployment diagrams</td>
+</tr>
+<tr>
+<td><strong>Interface Design</strong></td>
+<td>User experience design, API design</td>
+<td>UI mockups, API documentation</td>
+</tr>
+</tbody>
+</table>
+<h3 id="programming-paradigm">3.3.3 Programming Paradigm</h3>
+<p>The project adopts a <strong>multi-paradigm programming
+approach</strong> combining:</p>
+<h4 id="object-oriented-programming-oop">Object-Oriented Programming
+(OOP)</h4>
+<ul>
+<li><strong>Encapsulation</strong>: Data and methods bundled within
+classes</li>
+<li><strong>Inheritance</strong>: Hierarchical relationships between
+inscription types</li>
+<li><strong>Polymorphism</strong>: Flexible handling of different
+inscription formats</li>
+</ul>
+<h4 id="functional-programming-elements">Functional Programming
+Elements</h4>
+<ul>
+<li><strong>Immutable data structures</strong>: Ensuring data integrity
+in processing pipelines</li>
+<li><strong>Pure functions</strong>: Predictable text processing
+operations</li>
+<li><strong>Higher-order functions</strong>: Flexible transformation and
+filtering operations</li>
+</ul>
+<h4 id="technology-stack">Technology Stack</h4>
+<div class="sourceCode" id="cb3"><pre
+class="sourceCode yaml"><code class="sourceCode yaml"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">Backend Framework</span><span class="kw">:</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="kw">-</span><span class="at"> </span><span class="fu">Primary</span><span class="kw">:</span><span class="at"> Next.js with TypeScript</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="kw">-</span><span class="at"> </span><span class="fu">API Layer</span><span class="kw">:</span><span class="at"> Express.js middleware</span></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="kw">-</span><span class="at"> </span><span class="fu">Database</span><span class="kw">:</span><span class="at"> PostgreSQL with Prisma ORM</span></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a><span class="fu">Machine Learning Stack</span><span class="kw">:</span></span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="kw">-</span><span class="at"> TensorFlow/PyTorch for deep learning models</span></span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="kw">-</span><span class="at"> OpenCV for image processing</span></span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="kw">-</span><span class="at"> Tesseract.js for OCR functionality</span></span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a><span class="fu">Frontend Technologies</span><span class="kw">:</span></span>
+<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="kw">-</span><span class="at"> React with TypeScript</span></span>
+<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="kw">-</span><span class="at"> Tailwind CSS for styling</span></span>
+<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="kw">-</span><span class="at"> Chart.js for data visualization</span></span></code></pre></div>
+<h3 id="evaluation-methodology">3.3.4 Evaluation Methodology</h3>
+<p>The evaluation methodology incorporates both automated metrics and
+expert validation to ensure comprehensive assessment of system
+performance.</p>
+<h4 id="evaluation-framework">Evaluation Framework</h4>
+<table>
+<colgroup>
+<col style="width: 42%" />
+<col style="width: 18%" />
+<col style="width: 38%" />
+</colgroup>
+<thead>
+<tr>
+<th>Evaluation Dimension</th>
+<th>Metrics</th>
+<th>Validation Method</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Reconstruction Accuracy</strong></td>
+<td>Character-level accuracy, Word-level accuracy, BLEU score</td>
+<td>Comparison with ground truth, Expert review</td>
+</tr>
+<tr>
+<td><strong>Classification Performance</strong></td>
+<td>Precision, Recall, F1-score, Confusion matrix</td>
+<td>Cross-validation, Hold-out testing</td>
+</tr>
+<tr>
+<td><strong>System Performance</strong></td>
+<td>Response time, Throughput, Resource utilization</td>
+<td>Load testing, Performance profiling</td>
+</tr>
+<tr>
+<td><strong>Usability</strong></td>
+<td>Task completion rate, Error rate, User satisfaction</td>
+<td>User testing sessions, Surveys</td>
+</tr>
+</tbody>
+</table>
+<h4 id="evaluation-process">Evaluation Process</h4>
+<pre><code>Evaluation Pipeline:
+1. Automated Testing
+   ├── Unit tests for individual components
+   ├── Integration tests for system workflows
+   └── Performance benchmarks
+   
+2. Expert Validation
+   ├── Archaeological accuracy assessment
+   ├── Linguistic correctness review
+   └── Historical context validation
+   
+3. User Acceptance Testing
+   ├── Functionality testing
+   ├── Usability evaluation
+   └── Feedback collection</code></pre>
+<h3 id="solution-methodology">3.3.5 Solution Methodology</h3>
+<p>The solution methodology emphasizes <strong>iterative
+development</strong> with continuous feedback integration and
+incremental improvement.</p>
+<h4 id="development-lifecycle">Development Lifecycle</h4>
+<ol type="1">
+<li><strong>Analysis Phase</strong>: Requirements analysis and
+feasibility study</li>
+<li><strong>Design Phase</strong>: System architecture and component
+design</li>
+<li><strong>Implementation Phase</strong>: Iterative coding with
+frequent testing</li>
+<li><strong>Testing Phase</strong>: Comprehensive validation and
+debugging</li>
+<li><strong>Deployment Phase</strong>: Production deployment and
+monitoring</li>
+<li><strong>Maintenance Phase</strong>: Ongoing support and
+enhancement</li>
+</ol>
+<h4 id="quality-assurance-strategy">Quality Assurance Strategy</h4>
+<table>
+<thead>
+<tr>
+<th>QA Activity</th>
+<th>Frequency</th>
+<th>Responsibility</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Code Reviews</strong></td>
+<td>Every commit</td>
+<td>Development team</td>
+</tr>
+<tr>
+<td><strong>Automated Testing</strong></td>
+<td>Continuous integration</td>
+<td>CI/CD pipeline</td>
+</tr>
+<tr>
+<td><strong>Performance Testing</strong></td>
+<td>Weekly</td>
+<td>QA team</td>
+</tr>
+<tr>
+<td><strong>Security Audits</strong></td>
+<td>Monthly</td>
+<td>Security team</td>
+</tr>
+<tr>
+<td><strong>Expert Reviews</strong></td>
+<td>Major releases</td>
+<td>Domain experts</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="project-management-methodology">3.4 Project Management
+Methodology</h2>
+<p>The project management approach combines traditional project
+management principles with agile methodologies, specifically adapted for
+research and development in the digital humanities domain.</p>
+<h3 id="project-management-framework">Project Management Framework</h3>
+<p>The project follows a <strong>hybrid methodology</strong>
+incorporating: - <strong>Agile Scrum</strong>: For iterative development
+and frequent stakeholder feedback - <strong>Waterfall elements</strong>:
+For research phases requiring sequential completion - <strong>Lean
+principles</strong>: To minimize waste and maximize value delivery</p>
+<h3 id="project-scope">3.4.1 Project Scope</h3>
+<h4 id="scope-definition">Scope Definition</h4>
+<p>The project scope is defined through a <strong>hierarchical work
+breakdown structure</strong> ensuring comprehensive coverage of all
+deliverables.</p>
+<pre><code>Sinhalese Inscriptions Reconstruction Project
+│
+├── 1. Research and Analysis
+│   ├── 1.1 Literature Review
+│   ├── 1.2 Data Collection
+│   └── 1.3 Requirement Analysis
+│
+├── 2. System Design and Architecture
+│   ├── 2.1 System Architecture Design
+│   ├── 2.2 Database Design
+│   └── 2.3 API Specification
+│
+├── 3. Core Development
+│   ├── 3.1 OCR Module Development
+│   ├── 3.2 Reconstruction Algorithm
+│   ├── 3.3 Classification System
+│   └── 3.4 User Interface Development
+│
+├── 4. Testing and Validation
+│   ├── 4.1 Unit Testing
+│   ├── 4.2 Integration Testing
+│   ├── 4.3 Expert Validation
+│   └── 4.4 Performance Testing
+│
+└── 5. Deployment and Documentation
+    ├── 5.1 System Deployment
+    ├── 5.2 User Documentation
+    └── 5.3 Technical Documentation</code></pre>
+<h4 id="scope-management">Scope Management</h4>
+<table>
+<colgroup>
+<col style="width: 28%" />
+<col style="width: 35%" />
+<col style="width: 35%" />
+</colgroup>
+<thead>
+<tr>
+<th>Scope Element</th>
+<th>Inclusion Criteria</th>
+<th>Exclusion Criteria</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Inscription Types</strong></td>
+<td>Sinhalese stone inscriptions (3rd BCE - 15th CE)</td>
+<td>Palm leaf manuscripts, Modern inscriptions</td>
+</tr>
+<tr>
+<td><strong>Reconstruction Methods</strong></td>
+<td>ML-based character prediction, Context-aware completion</td>
+<td>Manual reconstruction, Non-computational methods</td>
+</tr>
+<tr>
+<td><strong>Classification Features</strong></td>
+<td>Temporal, Geographic, Linguistic</td>
+<td>Artistic style, Material composition</td>
+</tr>
+<tr>
+<td><strong>User Interface</strong></td>
+<td>Web-based dashboard, API access</td>
+<td>Mobile applications, Desktop software</td>
+</tr>
+</tbody>
+</table>
+<h3 id="schedule">3.4.2 Schedule</h3>
+<h4 id="project-timeline">Project Timeline</h4>
+<p>The project follows a <strong>milestone-driven schedule</strong> with
+clearly defined deliverables and checkpoints.</p>
+<table>
+<colgroup>
+<col style="width: 14%" />
+<col style="width: 21%" />
+<col style="width: 34%" />
+<col style="width: 29%" />
+</colgroup>
+<thead>
+<tr>
+<th>Phase</th>
+<th>Duration</th>
+<th>Key Milestones</th>
+<th>Dependencies</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Phase 1: Research</strong></td>
+<td>8 weeks</td>
+<td>Literature review complete, Dataset compiled</td>
+<td>Access to archaeological databases</td>
+</tr>
+<tr>
+<td><strong>Phase 2: Design</strong></td>
+<td>6 weeks</td>
+<td>System architecture finalized, API designed</td>
+<td>Requirements approval</td>
+</tr>
+<tr>
+<td><strong>Phase 3: Development</strong></td>
+<td>16 weeks</td>
+<td>Core modules implemented, Integration complete</td>
+<td>Design approval, Development environment</td>
+</tr>
+<tr>
+<td><strong>Phase 4: Testing</strong></td>
+<td>8 weeks</td>
+<td>Testing complete, Expert validation done</td>
+<td>Development completion</td>
+</tr>
+<tr>
+<td><strong>Phase 5: Deployment</strong></td>
+<td>4 weeks</td>
+<td>System deployed, Documentation complete</td>
+<td>Testing sign-off</td>
+</tr>
+</tbody>
+</table>
+<h4 id="schedule-management-approach">Schedule Management Approach</h4>
+<pre class="mermaid"><code>gantt
+    title Project Schedule Overview
+    dateFormat  YYYY-MM-DD
+    section Research Phase
+    Literature Review    :active, research1, 2024-01-01, 2024-02-15
+    Data Collection     :research2, after research1, 4w
+    Requirements       :research3, after research2, 2w
+    
+    section Design Phase
+    System Architecture :design1, after research3, 3w
+    Database Design    :design2, after design1, 2w
+    API Specification  :design3, after design2, 1w
+    
+    section Development Phase
+    OCR Module        :dev1, after design3, 6w
+    Reconstruction    :dev2, after dev1, 5w
+    Classification    :dev3, after dev1, 4w
+    UI Development    :dev4, after dev2, 3w
+    
+    section Testing Phase
+    Unit Testing      :test1, after dev4, 2w
+    Integration       :test2, after test1, 3w
+    Expert Review     :test3, after test2, 2w
+    Performance       :test4, after test3, 1w
+    
+    section Deployment
+    System Deployment :deploy1, after test4, 2w
+    Documentation     :deploy2, after test4, 2w</code></pre>
+<h3 id="resource-requirements">3.4.3 Resource Requirements</h3>
+<h4 id="human-resources">Human Resources</h4>
+<table>
+<colgroup>
+<col style="width: 12%" />
+<col style="width: 20%" />
+<col style="width: 34%" />
+<col style="width: 34%" />
+</colgroup>
+<thead>
+<tr>
+<th>Role</th>
+<th>Quantity</th>
+<th>Responsibilities</th>
+<th>Skills Required</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Project Manager</strong></td>
+<td>1</td>
+<td>Project coordination, Stakeholder management</td>
+<td>PMP certification, Agile experience</td>
+</tr>
+<tr>
+<td><strong>Lead Developer</strong></td>
+<td>1</td>
+<td>Architecture design, Code review</td>
+<td>5+ years experience, ML expertise</td>
+</tr>
+<tr>
+<td><strong>Backend Developers</strong></td>
+<td>2</td>
+<td>API development, Database design</td>
+<td>Node.js, Python, PostgreSQL</td>
+</tr>
+<tr>
+<td><strong>Frontend Developer</strong></td>
+<td>1</td>
+<td>UI implementation, User experience</td>
+<td>React, TypeScript, CSS</td>
+</tr>
+<tr>
+<td><strong>ML Engineer</strong></td>
+<td>1</td>
+<td>Algorithm development, Model training</td>
+<td>TensorFlow, Computer Vision</td>
+</tr>
+<tr>
+<td><strong>Domain Expert</strong></td>
+<td>1</td>
+<td>Requirements validation, Testing</td>
+<td>Archaeology/Linguistics PhD</td>
+</tr>
+<tr>
+<td><strong>QA Engineer</strong></td>
+<td>1</td>
+<td>Testing, Quality assurance</td>
+<td>Automated testing, Performance testing</td>
+</tr>
+</tbody>
+</table>
+<h4 id="technical-resources">Technical Resources</h4>
+<table>
+<colgroup>
+<col style="width: 37%" />
+<col style="width: 31%" />
+<col style="width: 31%" />
+</colgroup>
+<thead>
+<tr>
+<th>Resource Category</th>
+<th>Specification</th>
+<th>Justification</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Development Hardware</strong></td>
+<td>High-end workstations with GPU support</td>
+<td>ML model training requirements</td>
+</tr>
+<tr>
+<td><strong>Cloud Infrastructure</strong></td>
+<td>AWS/Azure with GPU instances</td>
+<td>Scalable computing for ML workloads</td>
+</tr>
+<tr>
+<td><strong>Software Licenses</strong></td>
+<td>Professional development tools, ML frameworks</td>
+<td>Enhanced productivity and capabilities</td>
+</tr>
+<tr>
+<td><strong>Data Storage</strong></td>
+<td>High-capacity, backed-up storage systems</td>
+<td>Large datasets and model storage</td>
+</tr>
+<tr>
+<td><strong>Development Tools</strong></td>
+<td>IDEs, Version control, CI/CD tools</td>
+<td>Standard development infrastructure</td>
+</tr>
+</tbody>
+</table>
+<h4 id="budget-allocation">Budget Allocation</h4>
+<pre><code>Total Project Budget: $150,000
+├── Personnel (70%): $105,000
+│   ├── Development Team: $75,000
+│   ├── Domain Experts: $20,000
+│   └── Project Management: $10,000
+├── Infrastructure (20%): $30,000
+│   ├── Cloud Services: $20,000
+│   ├── Software Licenses: $7,000
+│   └── Hardware: $3,000
+└── Contingency (10%): $15,000</code></pre>
+<h3 id="risks-and-mitigation">3.4.4 Risks and Mitigation</h3>
+<h4 id="risk-assessment-matrix">Risk Assessment Matrix</h4>
+<table style="width:100%;">
+<colgroup>
+<col style="width: 17%" />
+<col style="width: 20%" />
+<col style="width: 15%" />
+<col style="width: 10%" />
+<col style="width: 14%" />
+<col style="width: 22%" />
+</colgroup>
+<thead>
+<tr>
+<th>Risk Category</th>
+<th>Risk Description</th>
+<th>Probability</th>
+<th>Impact</th>
+<th>Risk Level</th>
+<th>Mitigation Strategy</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Technical</strong></td>
+<td>ML model accuracy below requirements</td>
+<td>Medium</td>
+<td>High</td>
+<td>High</td>
+<td>Multiple algorithm approaches, Expert validation</td>
+</tr>
+<tr>
+<td><strong>Data</strong></td>
+<td>Insufficient training data quality</td>
+<td>High</td>
+<td>High</td>
+<td>Critical</td>
+<td>Data augmentation, Synthetic data generation</td>
+</tr>
+<tr>
+<td><strong>Resource</strong></td>
+<td>Key personnel unavailability</td>
+<td>Low</td>
+<td>High</td>
+<td>Medium</td>
+<td>Cross-training, Documentation, Backup resources</td>
+</tr>
+<tr>
+<td><strong>Schedule</strong></td>
+<td>Development delays due to complexity</td>
+<td>Medium</td>
+<td>Medium</td>
+<td>Medium</td>
+<td>Buffer time, Agile sprints, Priority management</td>
+</tr>
+<tr>
+<td><strong>Stakeholder</strong></td>
+<td>Changing requirements from experts</td>
+<td>Medium</td>
+<td>Medium</td>
+<td>Medium</td>
+<td>Regular communication, Change management process</td>
+</tr>
+</tbody>
+</table>
+<h4 id="risk-mitigation-strategies">Risk Mitigation Strategies</h4>
+<ol type="1">
+<li><strong>Technical Risk Mitigation</strong>
+<ul>
+<li>Implement multiple ML approaches for comparison</li>
+<li>Establish clear accuracy thresholds early in the project</li>
+<li>Regular technical reviews with domain experts</li>
+<li>Proof-of-concept development to validate approaches</li>
+</ul></li>
+<li><strong>Data Risk Mitigation</strong>
+<ul>
+<li>Establish partnerships with multiple archaeological
+institutions</li>
+<li>Develop data augmentation techniques</li>
+<li>Create synthetic training data using linguistic rules</li>
+<li>Implement data quality validation processes</li>
+</ul></li>
+<li><strong>Resource Risk Mitigation</strong>
+<ul>
+<li>Maintain detailed documentation for all components</li>
+<li>Cross-train team members on critical technologies</li>
+<li>Establish relationships with external consultants</li>
+<li>Implement knowledge management systems</li>
+</ul></li>
+<li><strong>Schedule Risk Mitigation</strong>
+<ul>
+<li>Build buffer time into critical path activities</li>
+<li>Use agile methodologies for flexibility</li>
+<li>Regular progress monitoring and adjustment</li>
+<li>Early identification and escalation of issues</li>
+</ul></li>
+</ol>
+<h4 id="risk-monitoring-and-control">Risk Monitoring and Control</h4>
+<table>
+<colgroup>
+<col style="width: 36%" />
+<col style="width: 15%" />
+<col style="width: 23%" />
+<col style="width: 24%" />
+</colgroup>
+<thead>
+<tr>
+<th>Risk Monitoring Activity</th>
+<th>Frequency</th>
+<th>Responsibility</th>
+<th>Action Triggers</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Technical Progress Review</strong></td>
+<td>Weekly</td>
+<td>Technical Lead</td>
+<td>Model accuracy below 85%</td>
+</tr>
+<tr>
+<td><strong>Data Quality Assessment</strong></td>
+<td>Bi-weekly</td>
+<td>ML Engineer</td>
+<td>Error rate above 15%</td>
+</tr>
+<tr>
+<td><strong>Resource Availability Check</strong></td>
+<td>Monthly</td>
+<td>Project Manager</td>
+<td>Team member utilization below 80%</td>
+</tr>
+<tr>
+<td><strong>Stakeholder Feedback Review</strong></td>
+<td>Bi-weekly</td>
+<td>Project Manager</td>
+<td>Major requirement changes</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="chapter-summary">3.5 Chapter Summary</h2>
+<p>This methodology chapter has established a comprehensive framework
+for the successful execution of the Sinhalese Inscriptions: Novel
+Reconstruction and Classification project. The methodology integrates
+multiple dimensions of project execution, ensuring both technical
+excellence and academic rigor.</p>
+<h3 id="key-methodological-contributions">Key Methodological
+Contributions</h3>
+<ol type="1">
+<li><p><strong>Integrated Research Approach</strong>: The methodology
+combines computational methods with archaeological expertise, ensuring
+domain-relevant solutions while maintaining technical
+innovation.</p></li>
+<li><p><strong>Systematic Development Framework</strong>: The
+development methodology provides clear guidelines for iterative
+improvement, quality assurance, and stakeholder engagement throughout
+the project lifecycle.</p></li>
+<li><p><strong>Risk-Aware Project Management</strong>: The project
+management methodology incorporates comprehensive risk assessment and
+mitigation strategies specifically tailored to digital humanities
+research projects.</p></li>
+</ol>
+<h3 id="methodology-alignment-with-project-goals">Methodology Alignment
+with Project Goals</h3>
+<table>
+<colgroup>
+<col style="width: 38%" />
+<col style="width: 61%" />
+</colgroup>
+<thead>
+<tr>
+<th>Project Goal</th>
+<th>Methodological Support</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Accurate Reconstruction</strong></td>
+<td>Multi-validation approach combining automated metrics with expert
+review</td>
+</tr>
+<tr>
+<td><strong>Effective Classification</strong></td>
+<td>Systematic evaluation framework with cross-validation and
+performance benchmarking</td>
+</tr>
+<tr>
+<td><strong>Scalable Solution</strong></td>
+<td>Modular architecture design with microservices pattern</td>
+</tr>
+<tr>
+<td><strong>Academic Rigor</strong></td>
+<td>Mixed-methods research approach with peer review and validation</td>
+</tr>
+<tr>
+<td><strong>Practical Application</strong></td>
+<td>User-centered design with stakeholder involvement throughout
+development</td>
+</tr>
+</tbody>
+</table>
+<h3 id="expected-outcomes">Expected Outcomes</h3>
+<p>The implementation of this methodology framework is expected to
+deliver:</p>
+<ul>
+<li>A robust and accurate system for Sinhalese inscription
+reconstruction</li>
+<li>A validated classification system for historical and linguistic
+analysis<br />
+</li>
+<li>A scalable software architecture supporting future research
+extensions</li>
+<li>Comprehensive documentation and knowledge transfer to the
+archaeological community</li>
+<li>A replicable methodology framework for similar digital humanities
+projects</li>
+</ul>
+<h3 id="methodological-innovation">Methodological Innovation</h3>
+<p>This methodology introduces several innovative approaches to digital
+archaeology:</p>
+<ol type="1">
+<li><strong>Hybrid Validation Framework</strong>: Combining automated
+metrics with expert archaeological assessment</li>
+<li><strong>Domain-Driven ML Development</strong>: Integrating
+archaeological knowledge into machine learning model design</li>
+<li><strong>Stakeholder-Centric Requirements Engineering</strong>:
+Ensuring academic requirements are properly translated into technical
+specifications</li>
+<li><strong>Risk-Aware Digital Humanities Management</strong>:
+Addressing unique challenges of interdisciplinary research projects</li>
+</ol>
+<p>The methodology presented in this chapter provides the foundation for
+systematic, rigorous, and successful completion of the Sinhalese
+Inscriptions reconstruction and classification project, while
+contributing to the broader field of computational archaeology and
+digital humanities research.</p>
+<hr />
+<p><strong>Document Information:</strong> - Project: Sinhalese
+Inscriptions: Novel Reconstruction and Classification - Student: Dhanish
+Ithhaf (CB009562) - Chapter: 03 - Methodology<br />
+- Page: 29-42 - Final Submission Version</p>
+<hr />
+</body>
+</html>

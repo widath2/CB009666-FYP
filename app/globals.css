@@ -1,0 +1,127 @@
+@import "tailwindcss";
+
+/* Import dyslexia-friendly fonts */
+
+@import url("https://fonts.googleapis.com/css2?family=Comic+Neue:wght@400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;600;700&display=swap");
+:root {
+    --background: #faf8f3;
+    --foreground: #2d3436;
+    --dyslexia-bg: #fff9e6;
+    --dyslexia-card: #fffdf7;
+    --primary-blue: #4c6ef5;
+    --primary-purple: #7c3aed;
+}
+
+@theme inline {
+    --color-background: var(--background);
+    --color-foreground: var(--foreground);
+    --font-sans: "Lexend", "Comic Neue", sans-serif;
+    --font-mono: "Courier New", monospace;
+}
+
+@media (prefers-color-scheme: dark) {
+     :root {
+        --background: #1a1a1a;
+        --foreground: #e5e5e5;
+        --dyslexia-bg: #2d2d2d;
+        --dyslexia-card: #3a3a3a;
+    }
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background: var(--background);
+    color: var(--foreground);
+    font-family: "Lexend", "Comic Neue", Arial, sans-serif;
+    font-weight: 400;
+    letter-spacing: 0.02em;
+    line-height: 1.6;
+}
+
+
+/* Global dyslexia-friendly text defaults */
+
+p,
+span,
+div {
+    letter-spacing: 0.05em;
+    word-spacing: 0.1em;
+}
+
+
+/* Dyslexia-friendly text styles */
+
+.dyslexia-friendly {
+    font-family: "Comic Neue", "Lexend", Arial, sans-serif;
+    font-size: 1.25rem;
+    line-height: 2;
+    letter-spacing: 0.08em;
+    word-spacing: 0.16em;
+    color: #1a1a1a;
+    font-weight: 400;
+}
+
+.dyslexia-bg {
+    background-color: var(--dyslexia-bg);
+    border: 2px solid #f59e0b;
+    box-shadow: 0 4px 6px -1px rgba(245, 158, 11, 0.1);
+}
+
+
+/* Custom scrollbar for better visibility */
+
+::-webkit-scrollbar {
+    width: 12px;
+    height: 12px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 6px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 6px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+
+/* Animation classes */
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.animate-fade-in {
+    animation: fadeIn 0.5s ease-out;
+}
+
+
+/* Gradient backgrounds */
+
+.gradient-primary {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+
+.gradient-secondary {
+    background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+}
+
+.gradient-warm {
+    background: linear-gradient(135deg, #fa709a 0%, #fee140 100%);
+}
